@@ -18,6 +18,8 @@ if (!argv._[0]) {
 
 
 yargs
+  .demandOption('')
+  .alias('', 'help')
   .alias('h', 'help')
   .alias('v', 'version')
   .option('out-file', {
@@ -28,15 +30,21 @@ yargs
   .option('out-dir', {
     alias: 'd',
     description: "output directory",
-    default: path.resolve()
+    default: path.resolve('build')
   })
   .argv
 
-// console.log(yargs.argv)
+console.log(yargs.argv)
 
 argv = yargs.argv
+
+
 const entryFile = path.isAbsolute(entry) ? entry : path.join(process.cwd(), entry)
 const entryInfo = path.parse(entryFile)
+
+if (argv) {
+
+}
 
 const config = deepMerge(webpackConfig, {
   entry: {
