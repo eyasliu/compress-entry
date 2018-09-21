@@ -1,0 +1,27 @@
+{
+  "name": "compress-entry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "compress-entry": "build/index.js"
+  },
+  "files": [
+    "build/index.js",
+    "build/compress-entry.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node index.js index.js -d build -f compress-entry.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "webpack": "^4.19.1",
+    "webpackbar": "^2.6.3",
+    "yargs": "^12.0.2",
+    "deep-assign": "^2.0.0"
+  }
+}
